@@ -66,7 +66,7 @@ const FilterBar = (props) => {
 
     const handleRemuve = async (id) => {
         try {
-            await $host.delete(`dashboard/products/${id}/`);
+            await $host.delete(`dashboard/checkout/${id}/`);
             setReload((prev) => prev + 1);
         } catch (error) {
             console.error(error);
@@ -82,7 +82,7 @@ const FilterBar = (props) => {
                 <Button
                     variant="primary"
                     color="primary"
-                    onClick={() => navigate("/products/add")}
+                    onClick={() => navigate("/checkout/add")}
                     // href={href}
                     style={{ width: "100%" }}
                 >
@@ -123,7 +123,7 @@ const FilterBar = (props) => {
                                             ?.toLowerCase()
                                             .includes(search.toLowerCase());
                                 })
-                                .map(({ user, full_name, phone_number, created_at }) =>
+                                .map(({ id, user, full_name, phone_number, created_at }) =>
                                     <TableRow key={user}>
                                         <TableCell> {user} </TableCell>
                                         <TableCell>{full_name}</TableCell>
@@ -149,11 +149,11 @@ const FilterBar = (props) => {
                                             }}
                                         >
                                             <ion-icon
-                                                onClick={() => { }}
+                                                onClick={() => navigate(`/checkout/edit/${id}`)}
                                                 name="create-outline"
                                             ></ion-icon>
                                             <ion-icon
-                                                onClick={() => { }}
+                                                onClick={() => handleRemuve(id)}
                                                 name="trash-outline"
                                             ></ion-icon>
                                         </TableCell>

@@ -39,6 +39,8 @@ import Users from "./Products/components/Users";
 import UsersAdd from "./Products/components/UsersAdd";
 import UsersEdit from "./Products/components/UsersEdit";
 import Checkout from "./Products/components/Checkout";
+import CheckoutAdd from "./Products/components/CheckoutAdd";
+import CheckoutEdit from "./Products/components/CheckoutEdit";
 import Phone from "./Products/components/Phone/Phone";
 import PhoneAdd from "./Products/components/Phone/PhoneAdd";
 import PhoneEdit from "./Products/components/Phone/PhoneEdit";
@@ -75,6 +77,8 @@ const AppRoutes = () => {
           <Route path="users/edit/:id" element={<UsersEdit />} />
 
           <Route path="checkout" element={<Checkout />} />
+          <Route path="checkout/add" element={<CheckoutAdd />} />
+          <Route path="checkout/edit/:id" element={<CheckoutEdit />} />
 
           <Route path="phone-site-settings" element={<Phone />} />
           <Route path="phone-site-settings/add" element={<PhoneAdd />} />

@@ -105,7 +105,7 @@ const FilterBar = (props) => {
               is_active ? (
                 <TableRow key={id}>
                   <TableCell> {id} </TableCell>
-                  <TableCell onClick={() => navigate(`/products/${id}`)}> {name} </TableCell>
+                  <TableCell style={{cursor: "pointer"}} onClick={() => navigate(`/products/edit/${id}`)}> {name} </TableCell>
                   <TableCell style={{ textAlign: "center", width: "50%" }}> {new Date(created_at).toLocaleDateString("ru-RU", {
                       month: "long",
                       day: "numeric",

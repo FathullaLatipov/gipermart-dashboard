@@ -34,7 +34,7 @@ const HomeNotification = () => {
                         <TableRowLink hover={true} href="/checkout">
                             <TableCell>
                                 <Typography>
-                                    <strong>2</strong> заказа готовы к выполнению
+                                    <strong>5</strong> заказа готовы к выполнению
                                 </Typography>
                             </TableCell>
                             <TableCell className={classes.arrowIcon}>
@@ -44,7 +44,7 @@ const HomeNotification = () => {
                         <TableRowLink hover={true} href="/checkout">
                             <TableCell>
                                 <Typography>
-                                    <strong>2</strong> заказа в обработке
+                                    <strong>5</strong> заказа в обработке
                                 </Typography>
                             </TableCell>
                             <TableCell className={classes.arrowIcon}>

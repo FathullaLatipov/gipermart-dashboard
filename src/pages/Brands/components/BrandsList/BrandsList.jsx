@@ -131,8 +131,8 @@ const BrandsList = memo(({ search }) => {
           <TableRow>
             <TableCell style={{ width: "20px" }}>ID</TableCell>
             <TableCell style={{ width: "200px" }}>Марка</TableCell>
-            <TableCell>Создан</TableCell>
-            <TableCell>Обновлен</TableCell>
+            <TableCell>Время создания</TableCell>
+            <TableCell>Время обновления</TableCell>
             <TableCell style={{ textAlign: "center" }}>Действия</TableCell>
           </TableRow>
         </TableHead>
@@ -142,7 +142,7 @@ const BrandsList = memo(({ search }) => {
               search?.toLowerCase() === ""
                 ? item
                 : item.name?.toLowerCase().includes(search?.toLowerCase()) ||
-                  String(item.id)?.toLowerCase().includes(search.toLowerCase())
+                String(item.id)?.toLowerCase().includes(search.toLowerCase())
             )
             .map((brand, i) => (
               <TableRow key={brand.id}>

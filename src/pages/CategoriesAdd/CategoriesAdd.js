@@ -60,7 +60,7 @@ const CategoriesAdd = (props) => {
   return (
     <Container>
       <Backlink onClick={() => navigate("/categories")}>Категории</Backlink>
-      <PageHeader title="Создать новую Категории" />
+      <PageHeader title="Создать новую категорию" />
       <div>
         <Card>
           <CardTitle title={"Основная информация"} />
@@ -143,7 +143,7 @@ const CategoriesAdd = (props) => {
           variant="contained"
           onClick={handleSubmit}
         >
-          Save
+          Сохранить
         </Button>
       </div>
     </Container>

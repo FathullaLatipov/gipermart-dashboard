@@ -24,7 +24,7 @@ const CategoriesPage = () => {
             // href={href}
             style={{ width: "100%" }}
           >
-            Создать
+            Создать категорию
           </Button>
         </PageHeader>
         <Card>

@@ -1,23 +1,23 @@
 import {
-    Box,
-    Button,
-    Card,
-    Checkbox,
-    FormControl,
-    InputLabel,
-    makeStyles,
-    MenuItem,
-    Select,
-    TextField,
-  } from "@material-ui/core";
-  import { Backlink } from "@saleor/macaw-ui";
-  import React, { useEffect, useState } from "react";
-  import { useNavigate, useParams } from "react-router-dom";
-  import CardSpacer from "../../components/CardSpacer";
-  import Container from "../../components/Container";
-  import PageHeader from "../../components/PageHeader";
-  import $host from "../../http";
-  import CardTitle from "../../components/CardTitle";
+  Box,
+  Button,
+  Card,
+  Checkbox,
+  FormControl,
+  InputLabel,
+  makeStyles,
+  MenuItem,
+  Select,
+  TextField,
+} from "@material-ui/core";
+import { Backlink } from "@saleor/macaw-ui";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import CardSpacer from "../../components/CardSpacer";
+import Container from "../../components/Container";
+import PageHeader from "../../components/PageHeader";
+import $host from "../../http";
+import CardTitle from "../../components/CardTitle";
 import FormSpacer from "../../components/FormSpacer/FormSpacer";
   
   const useStyles = makeStyles((theme) => ({
@@ -37,19 +37,17 @@ import FormSpacer from "../../components/FormSpacer/FormSpacer";
         town: "",
         address: "",
         comment: "",
-        // cart: null,
+        cart: [
+          0,
+        ],
         user: null,
-        PAY_STATUS: false,
-        NAXT_STATUS: false,
+        PAY_STATUS: true,
+        NAXT_STATUS: true,
         total_price: "",
     });
     console.log(newData);
     const [users, setUsers] = useState(null);
-    const [carts, setCarts] = useState(null);
-    console.log(carts);
-    const [search, setSearch] = React.useState("");
     const [isUsers, setIsUsers] = useState(newData?.category);
-    // const [isCarts, setIsCarts] = useState(newData?.cart);
     const classes = useStyles(props);
   
     const handleSubmit = async () => {
@@ -65,14 +63,6 @@ import FormSpacer from "../../components/FormSpacer/FormSpacer";
         .then((res) => setUsers(res.data.results))
         .catch((error) => console.error(error));
     }, []);
-
-    useEffect(() => {
-        $host
-          .get("cart/all-carts")
-        //   .then(res => res.json())
-          .then((res) => setCarts(res.data.results))
-          .catch((error) => console.error(error));
-      }, []);
   
     return (
       <Container>
@@ -138,7 +128,6 @@ import FormSpacer from "../../components/FormSpacer/FormSpacer";
               />
               <CardSpacer />
               <TextField
-                multiline
                 fullWidth
                 placeholder={"comment"}
                 name="comment"
@@ -148,52 +137,18 @@ import FormSpacer from "../../components/FormSpacer/FormSpacer";
                 }
               />
               <CardSpacer />
-              {/* {carts
-                        ?.filter((item) => {
-                            return search?.toLowerCase() === ""
-                                ? item
-                                : item.name?.toLowerCase().includes(search.toLowerCase()) ||
-                                String(item.id)
-                                    ?.toLowerCase()
-                                    .includes(search.toLowerCase());
-                        })
-                        .map(({ id, name}) =>
               <TextField
-                type="text"
-                multiline
+                type="number"
                 fullWidth
-                placeholder={"cart"}
-                name="cart"
-                value={newData?.name}
+                placeholder={"comment"}
+                name="comment"
+                value={newData?.comment}
                 onChange={(e) =>
-                  setNewData((prev) => ({ ...prev, name: e.target.value }))
+                  setNewData((prev) => ({ ...prev, comment: e.target.value }))
                 }
-              />)} */}
+              />
               <CardSpacer />
               <Box sx={{ minWidth: 120 }}>
-              {/* <FormControl fullWidth>
-                  <InputLabel id="product_type">product</InputLabel>
-                  <Select
-                    labelId="product_type"
-                    id="demo-simple-select"
-                    value={isCarts}
-                    onChange={(e) => {
-                      setIsCarts(e.target.value);
-                      setNewData((prev) => ({
-                        ...prev,
-                        cart: e.target.value,
-                      }));
-                    }}
-                  >
-                    {carts?.map(({ product, id }) => (
-                      <MenuItem key={id} value={id}>
-                        {product.product.name}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-                <FormSpacer /> */}
-
                 <FormControl fullWidth>
                   <InputLabel id="product_type">user</InputLabel>
                   <Select
@@ -204,13 +159,13 @@ import FormSpacer from "../../components/FormSpacer/FormSpacer";
                       setIsUsers(e.target.value);
                       setNewData((prev) => ({
                         ...prev,
-                        user: e.target.value,
+                        users: e.target.value,
                       }));
                     }}
                   >
-                    {users?.map(({ first_name, id }) => (
+                    {users?.map(({ name, id }) => (
                       <MenuItem key={id} value={id}>
-                        {first_name}
+                        {name}
                       </MenuItem>
                     ))}
                   </Select>
@@ -218,33 +173,33 @@ import FormSpacer from "../../components/FormSpacer/FormSpacer";
                 <FormSpacer />
               </Box>
               <Checkbox
-                checked={newData?.PAY_STATUS ? true : false}
+                checked={newData?.is_active ? true : false}
                 onChange={(e) =>
-                  setNewData((prev) => ({ ...prev, PAY_STATUS: e.target.checked }))
+                  setNewData((prev) => ({ ...prev, is_active: e.target.checked }))
                 }
               />
-              PAY_STATUS
+              is_active
               <Checkbox
-                checked={newData?.NAXT_STATUS ? true : false}
+                checked={newData?.is_default ? true : false}
                 onChange={(e) =>
                   setNewData((prev) => ({
                     ...prev,
-                    NAXT_STATUS: e.target.checked,
+                    is_default: e.target.checked,
                   }))
                 }
               />
-              NAXT_STATUS
-              <br />
-              <TextField
-                fullWidth
-                placeholder={"total_price"}
-                name="total_price"
-                value={newData?.total_price}
+              is_default
+              <Checkbox
+                checked={newData?.is_on_sale ? true : false}
                 onChange={(e) =>
-                  setNewData((prev) => ({ ...prev, total_price: e.target.value }))
+                  setNewData((prev) => ({
+                    ...prev,
+                    is_on_sale: e.target.checked,
+                  }))
                 }
               />
-              <CardSpacer />
+              is_on_sale
+              <br />
             </div>
           </Card>
   

@@ -104,8 +104,8 @@ const FilterBar = (props) => {
                     <TableContainer className={classes.table}>
                         <TableHead>
                             <TableRow >
-                                <TableCell>#</TableCell>
-                                <TableCell style={{ width: "70%" }}>name</TableCell>
+                                <TableCell>ID</TableCell>
+                                <TableCell style={{ width: "70%" }}>Названия</TableCell>
                                 {/* <TableCell style={{ textAlign: "center" }}>product_type_attributes</TableCell> */}
                                 <TableCell style={{ width: "25%", textAlign: "center" }}>Действия</TableCell>
                             </TableRow>

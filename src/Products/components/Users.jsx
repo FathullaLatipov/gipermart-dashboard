@@ -104,12 +104,12 @@ const FilterBar = (props) => {
                     <TableContainer className={classes.table}>
                         <TableHead>
                             <TableRow >
-                                <TableCell style={{ width: "5%" }}>#</TableCell>
+                                <TableCell style={{ width: "5%" }}>ID</TableCell>
                                 <TableCell style={{ width: "15%" }}>Имя</TableCell>
                                 <TableCell style={{ width: "15%" }}>Номер телефона</TableCell>
-                                <TableCell style={{ width: "10%" }}>Создан</TableCell>
-                                <TableCell style={{ width: "10%" }}>Active</TableCell>
-                                <TableCell style={{ width: "10%", textAlign: "center" }}>Deystvya</TableCell>
+                                <TableCell style={{ width: "10%" }}>Время создания</TableCell>
+                                <TableCell style={{ width: "10%" }}>Актив</TableCell>
+                                <TableCell style={{ width: "10%", textAlign: "center" }}>Действия</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -150,7 +150,7 @@ const FilterBar = (props) => {
                                             ></ion-icon>
                                         </TableCell>
                                     </TableRow>
-                                ): null
+                                ) : null
                                 )}
                         </TableBody>
                     </TableContainer>

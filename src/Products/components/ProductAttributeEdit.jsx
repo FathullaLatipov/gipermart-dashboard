@@ -26,7 +26,7 @@ const CategoriesEdit = (props) => {
     const params = useParams();
     const [data, setData] = useState(null);
     const classes = useStyles(props);
- 
+
     const sendToPreviousURL = () => {
         navigate("/product_attribute")
     }
@@ -66,7 +66,7 @@ const CategoriesEdit = (props) => {
                     <div className={classes.mainCardInfo}>
                         <TextField fullWidth placeholder={"Название аттрибута"} name="name" value={data?.name} onChange={(e) => handleChange(e.target)} />
                         <FormSpacer />
-                        <TextField fullWidth label={"Описание"} name="description" value={data?.description} onChange={(e) => handleChange(e.target)} />
+                        <TextField fullWidth placeholder={"Описание"} name="description" value={data?.description} onChange={(e) => handleChange(e.target)} />
                     </div>
                 </Card>
                 <CardSpacer />

@@ -27,10 +27,10 @@ const ProductMediaEdit = (props) => {
 
   const handleSubmit = async () => {
     const formData = new FormData();
-          formData.append("alt_text", newData.alt_text);
-          formData.append("is_feature", newData.is_feature);
-          formData.append("product_inventory", newData.product_inventory);
-          formData.append("img_url", newData.img_url);
+    formData.append("alt_text", newData.alt_text);
+    formData.append("is_feature", newData.is_feature);
+    formData.append("product_inventory", newData.product_inventory);
+    formData.append("img_url", newData.img_url);
     const res = await $host.put(`/dashboard/product-media/${params.id}/`, formData);
     res?.statusText ? navigate("/product-media") : alert("Nimadir hato ketdi");
   };
@@ -55,7 +55,7 @@ const ProductMediaEdit = (props) => {
         <Card>
           <CardTitle title={"Основная информация"} />
           <div className={classes.mainCardInfo}>
-          <TextField
+            <TextField
               fullWidth
               placeholder={"alt_text"}
               name="alt_text"
@@ -68,12 +68,13 @@ const ProductMediaEdit = (props) => {
                 setNewData((prev) => ({ ...prev, is_feature: e.target.checked }))
               }
             />
-            is_feature <br />
+            Отмечено <br />
+            {/* if_feature  */}
             <Button variant="contained" component="label">
-              Upload File
+              Загрузите изображения
               <input
                 type="file"
-                onChange={(e) => setNewData(prev => ({...prev, img_url: e.target.files[0]}))}
+                onChange={(e) => setNewData(prev => ({ ...prev, img_url: e.target.files[0] }))}
                 multiple
                 hidden
               />
@@ -85,34 +86,36 @@ const ProductMediaEdit = (props) => {
         </Card>
         <CardSpacer />
         <FormControl fullWidth>
-                <InputLabel id="demo-simple-gh-label">Products</InputLabel>
-                <Select
-                  labelId="demo-simple-gh-label"
-                  id="demo-simple-select"
-                  value={isProducts}
-                  onChange={(e) => {
-                    SetIsProducts(newData?.product_inventory);
-                    setNewData(prev => ({ 
-                      ...prev, product_inventory: e.target.value }))}}
-                >
-                  {
-                    products?.map((item) => (
-                      <MenuItem 
-                        key={item.id} 
-                        value={item.id}>
-                          {item.products.name}
-                        </MenuItem>
-                    ))
-                  }
+          <InputLabel id="demo-simple-gh-label">Products</InputLabel>
+          <Select
+            labelId="demo-simple-gh-label"
+            id="demo-simple-select"
+            value={isProducts}
+            onChange={(e) => {
+              SetIsProducts(newData?.product_inventory);
+              setNewData(prev => ({
+                ...prev, product_inventory: e.target.value
+              }))
+            }}
+          >
+            {
+              products?.map((item) => (
+                <MenuItem
+                  key={item.id}
+                  value={item.id}>
+                  {item.products.name}
+                </MenuItem>
+              ))
+            }
 
-                </Select>
-              </FormControl>
+          </Select>
+        </FormControl>
         <Button
           style={{ float: "right", marginTop: "10px", padding: "10px 70px" }}
           variant="contained"
           onClick={handleSubmit}
         >
-          Save
+          Сохранить
         </Button>
       </div>
     </Container>

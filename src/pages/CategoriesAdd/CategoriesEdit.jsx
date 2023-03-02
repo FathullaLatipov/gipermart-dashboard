@@ -66,17 +66,19 @@ const CategoriesEdit = (props) => {
     return (
         <Container>
             <Backlink onClick={() => sendToPreviousURL()}>Категории</Backlink>
-            <PageHeader title="Создать новую Категории" />
+            <PageHeader title="Создать новую категорию" />
             <div>
                 <Card>
                     <CardTitle title={"Основная информация"} />
                     <div className={classes.mainCardInfo}>
                         <TextField fullWidth placeholder={"Название категории"} name="name" value={data?.name} onChange={(e) => handleChange(e.target)} />
+                        <CardSpacer />
+
                         <TextField fullWidth placeholder={"slug категории"} name="slug" value={data?.slug} onChange={(e) => handleChange(e.target)} />
                         <FormSpacer />
                         <TextField multiline fullWidth placeholder="description категории" name="description" value={data?.description} onChange={(e) => handleChange(e.target)} />
                         <Checkbox defaultChecked={true} checked={data?.is_active} onChange={(e) => setData(prev => ({ ...prev, is_active: e.target.checked }))} />
-                        <Button variant="contained" component="label">Upload File<input type="file" onChange={(e) => setFile(e.target.files[0])} multiple hidden /></Button>
+                        <Button variant="contained" component="label">Загрузите изображения<input type="file" onChange={(e) => setFile(e.target.files[0])} multiple hidden /></Button>
                         <img style={{ borderRadius: "10px", marginTop: "10px", marginLeft: "20px", marginBottom: "-30px" }} width={70} src={data?.background_image} alt="" />
                     </div>
                 </Card>
@@ -101,7 +103,8 @@ const CategoriesEdit = (props) => {
                         </Autocomplete>
                     </div>
                 </Card>
-                <Button onClick={handleEdit}>Edit</Button>
+                <CardSpacer />
+                <Button onClick={handleEdit}>Изменить</Button>
             </div>
         </Container>
     );

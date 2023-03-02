@@ -134,7 +134,7 @@ const BrandsEdit = (props) => {
                 </Select>
                 <CardSpacer />
                 <Button style={{ width: "20%" }} component="label">
-                  Upload File
+                  Загрузите изображения
                   <input
                     type="file"
                     onChange={(e) =>
@@ -157,7 +157,7 @@ const BrandsEdit = (props) => {
           variant="contained"
           onClick={handleSubmit}
         >
-          Save
+          Сохранить
         </Button>
       </div>
     </Container>

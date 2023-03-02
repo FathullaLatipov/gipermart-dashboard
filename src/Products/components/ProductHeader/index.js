@@ -83,12 +83,12 @@ const FilterBar = (props) => {
       <TableContainer className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>#</TableCell>
-            <TableCell>Имя</TableCell>
-            <TableCell style={{ textAlign: "center", width: "50%" }}>Создать в</TableCell>
-            <TableCell style={{ textAlign: "center", width: "50%" }}>Обновить</TableCell>
-            <TableCell style={{ textAlign: "center", width: "50%" }}>Положение дел</TableCell>
-            <TableCell style={{ textAligin: "center", width: "50%"}}>Действия</TableCell>
+            <TableCell>ID</TableCell>
+            <TableCell>Названия</TableCell>
+            <TableCell style={{ textAlign: "center", width: "50%" }}>Время создания</TableCell>
+            <TableCell style={{ textAlign: "center", width: "50%" }}>Время обновления</TableCell>
+            <TableCell style={{ textAlign: "center", width: "50%" }}>Статус</TableCell>
+            <TableCell style={{ textAligin: "center", width: "50%" }}>Действия</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -105,17 +105,17 @@ const FilterBar = (props) => {
               is_active ? (
                 <TableRow key={id}>
                   <TableCell> {id} </TableCell>
-                  <TableCell style={{cursor: "pointer"}} onClick={() => navigate(`/products/edit/${id}`)}> {name} </TableCell>
+                  <TableCell style={{ cursor: "pointer" }} onClick={() => navigate(`/products/edit/${id}`)}> {name} </TableCell>
                   <TableCell style={{ textAlign: "center", width: "50%" }}> {new Date(created_at).toLocaleDateString("ru-RU", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })}</TableCell>
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}</TableCell>
                   <TableCell style={{ textAlign: "center", width: "50%" }}> {new Date(updated_at).toLocaleDateString("ru-RU", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })} </TableCell>
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })} </TableCell>
                   <TableCell style={{ textAlign: "center" }}> {status} </TableCell>
                   <TableCell
                     style={{

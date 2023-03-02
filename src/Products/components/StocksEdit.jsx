@@ -27,7 +27,7 @@ const StocksEdit = (props) => {
     const [data, setData] = useState(null);
     const [file, setFile] = useState(null);
     const classes = useStyles(props);
- 
+
     const sendToPreviousURL = () => {
         navigate("/stocks")
     }
@@ -65,7 +65,7 @@ const StocksEdit = (props) => {
                         <TextField fullWidth placeholder={"url акции"} name="url" value={data?.url} onChange={(e) => handleChange(e.target)} />
                         <FormSpacer />
                         <Button variant="contained" component="label">
-                            Upload File
+                            Загрузите изображения
                             <input
                                 type="file"
                                 onChange={(e) => setFile(e.target.files[0])}

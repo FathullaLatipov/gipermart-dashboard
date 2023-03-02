@@ -162,6 +162,7 @@ const AppRoutes = () => {
           />
 
           <Route path="change-password" element={<ChangePassword />} />
+          
         </Route>
       </Route>
       <Route path="/auth" element={<Auth />}>

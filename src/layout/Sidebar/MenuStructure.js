@@ -67,14 +67,14 @@ const MenuStructure = () => {
                     url: "/product_attribute",
                 },
                 {
-                    ariaLabel: "Атрибут продукта 2",
-                    label: "Атрибут продукта 2",
-                    id: "Атрибут продукта 2",
+                    ariaLabel: "Значения атрибута",
+                    label: "Значения атрибута",
+                    id: "Значения атрибута",
                     url: "/product-attribute-values",
                 },
                 {
-                    ariaLabel: "Атрибут продуктов",
-                    label: "Атрибут продуктов",
+                    ariaLabel: "Инвертарь продуктов",
+                    label: "Инвертарь продуктов",
                     id: "product-inventors",
                     url: "/product-inventors"
                 },

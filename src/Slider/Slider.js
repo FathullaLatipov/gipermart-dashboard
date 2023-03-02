@@ -131,7 +131,7 @@ const SliderList = memo(() => {
           // href={href}
           style={{ width: "100%" }}
         >
-          Создать слайдеры
+          Создать слайдер
         </Button>
       </PageHeader>
       <Card>
@@ -139,8 +139,8 @@ const SliderList = memo(() => {
           <ResponsiveTable className={classes.table}>
             <TableHead>
               <TableRow>
-                <TableCell style={{ width: "20px" }}>Id</TableCell>
-                <TableCell>Silka</TableCell>
+                <TableCell style={{ width: "20px" }}>ID</TableCell>
+                <TableCell>Ссылка</TableCell>
                 <TableCell>Изображения слайдера</TableCell>
                 <TableCell>Время создания</TableCell>
                 <TableCell style={{ width: "10%" }}>Действия</TableCell>

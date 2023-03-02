@@ -93,9 +93,9 @@ const ProductTypeAdd = (props) => {
                     }));
                   }}
                 >
-                  {productsTypeAttribute?.map(({ id }) => (
+                  {productsTypeAttribute?.map(({ id, product_attributes }) => (
                     <MenuItem key={id} value={id}>
-                      {id}
+                      {product_attributes.name}
                     </MenuItem>
                   ))}
                 </Select>

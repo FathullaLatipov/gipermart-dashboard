@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 const Products = () => {
     useEffect(() => {
-        document.title = "Товары";
+        document.title = "Товары 2";
     }, []);
 
     const navigate = useNavigate();

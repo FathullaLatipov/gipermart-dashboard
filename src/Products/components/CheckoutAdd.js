@@ -37,9 +37,9 @@ import FormSpacer from "../../components/FormSpacer/FormSpacer";
         town: "",
         address: "",
         comment: "",
-        cart: [
-          0,
-        ],
+        // cart: [
+        //   0,
+        // ],
         user: null,
         PAY_STATUS: true,
         NAXT_STATUS: true,
@@ -137,18 +137,29 @@ import FormSpacer from "../../components/FormSpacer/FormSpacer";
                 }
               />
               <CardSpacer />
-              <TextField
-                type="number"
-                fullWidth
-                placeholder={"comment"}
-                name="comment"
-                value={newData?.comment}
-                onChange={(e) =>
-                  setNewData((prev) => ({ ...prev, comment: e.target.value }))
-                }
-              />
-              <CardSpacer />
               <Box sx={{ minWidth: 120 }}>
+                {/* <FormControl fullWidth>
+                  <InputLabel id="product_type">product</InputLabel>
+                  <Select
+                    labelId="product_type"
+                    id="demo-simple-select"
+                    value={newData.cart}
+                    onChange={(e) => {
+                      setNewData((prev) => ({
+                        ...prev,
+                        cart: e.target.value,
+                      }));
+                    }}
+                  >
+                    {carts?.map(({ product, id }) => (
+                      <MenuItem key={id} value={id}>
+                        {product.product.name}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+                <FormSpacer /> */}
+                
                 <FormControl fullWidth>
                   <InputLabel id="product_type">user</InputLabel>
                   <Select
@@ -159,13 +170,13 @@ import FormSpacer from "../../components/FormSpacer/FormSpacer";
                       setIsUsers(e.target.value);
                       setNewData((prev) => ({
                         ...prev,
-                        users: e.target.value,
+                        user: e.target.value,
                       }));
                     }}
                   >
-                    {users?.map(({ name, id }) => (
+                    {users?.map(({ first_name, id }) => (
                       <MenuItem key={id} value={id}>
-                        {name}
+                        {first_name}
                       </MenuItem>
                     ))}
                   </Select>
@@ -173,33 +184,33 @@ import FormSpacer from "../../components/FormSpacer/FormSpacer";
                 <FormSpacer />
               </Box>
               <Checkbox
-                checked={newData?.is_active ? true : false}
+                checked={newData?.PAY_STATUS ? true : false}
                 onChange={(e) =>
-                  setNewData((prev) => ({ ...prev, is_active: e.target.checked }))
+                  setNewData((prev) => ({ ...prev, PAY_STATUS: e.target.checked }))
                 }
               />
-              is_active
+              PAY_STATUS
               <Checkbox
-                checked={newData?.is_default ? true : false}
+                checked={newData?.NAXT_STATUS ? true : false}
                 onChange={(e) =>
                   setNewData((prev) => ({
                     ...prev,
-                    is_default: e.target.checked,
+                    NAXT_STATUS: e.target.checked,
                   }))
                 }
               />
-              is_default
-              <Checkbox
-                checked={newData?.is_on_sale ? true : false}
-                onChange={(e) =>
-                  setNewData((prev) => ({
-                    ...prev,
-                    is_on_sale: e.target.checked,
-                  }))
-                }
-              />
-              is_on_sale
+              NAXT_STATUS
               <br />
+              <TextField
+                fullWidth
+                placeholder={"total_price"}
+                name="total_price"
+                value={newData?.total_price}
+                onChange={(e) =>
+                  setNewData((prev) => ({ ...prev, total_price: e.target.value }))
+                }
+              />
+              <CardSpacer />
             </div>
           </Card>
   

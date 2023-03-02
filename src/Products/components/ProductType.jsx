@@ -123,7 +123,9 @@ const FilterBar = (props) => {
                                 .map(({ id, name, product_type_attributes }) =>
                                     <TableRow key={id}>
                                         <TableCell> {id} </TableCell>
-                                        <TableCell style={{ width: "15%" }}>{name}</TableCell>
+                                        <TableCell style={{ width: "15%", cursor: "pointer" }}
+                                        onClick={() => navigate(`/product-type/edit/${id}`)}
+                                        >{name}</TableCell>
                                         {/* <TableCell style={{ textAlign: "center" }}>{product_type_attributes[0]} </TableCell> */}
                                         <TableCell
                                             style={{

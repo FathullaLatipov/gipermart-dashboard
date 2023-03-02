@@ -125,7 +125,9 @@ const ProductTypeAttributes = (props) => {
                 .map(({ id, product_attributes, product_types }) => (
                   <TableRow key={id}>
                     <TableCell> {id} </TableCell>
-                    <TableCell style={{ width: "100%", textAlign: "center" }}>
+                    <TableCell style={{ width: "100%", textAlign: "center", cursor: "pointer" }} 
+                      onClick={() => navigate(`/product-type-attribute/edit/${id}`)}
+                    >
                       {product_attributes.name}
                     </TableCell>
                     <TableCell>{product_types.name} </TableCell>

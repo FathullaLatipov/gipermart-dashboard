@@ -137,7 +137,9 @@ const FilterBar = (props) => {
                     <TableRow key={id}>
                       <TableCell> {sku} </TableCell>
                       <TableCell> {upc} </TableCell>
-                      <TableCell> {products ? products?.name : "-"} </TableCell>
+                      <TableCell style={{cursor: "pointer"}} onClick={() =>
+                            navigate(`/product-inventors/edit/${id}`)
+                          }> {products ? products?.name : "-"} </TableCell>
                       {/* <TableCell> {brand ? brand?.name : "-"} </TableCell> */}
                       <TableCell> {price} </TableCell>
                       <TableCell> {sale_price} </TableCell>

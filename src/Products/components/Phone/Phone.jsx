@@ -124,7 +124,7 @@ const Phone = (props) => {
                                 }) =>
                                     <TableRow key={id}>
                                         <TableCell> {id} </TableCell>
-                                        <TableCell style={{ width: "15%" }}> {phonenumbers} </TableCell>
+                                        <TableCell style={{ width: "15%", cursor: "pointer" }} onClick={() => navigate(`/phone-site-settings/edit/${id}`)}> {phonenumbers} </TableCell>
                                         <TableCell style={{ width: "15%" }}> {site_type} </TableCell>
                                         <TableCell
                                             style={{

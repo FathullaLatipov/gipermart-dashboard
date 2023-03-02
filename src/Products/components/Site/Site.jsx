@@ -122,7 +122,7 @@ const Site = (props) => {
                 .map(({ id, description, link, logo }) => (
                   <TableRow key={id}>
                     <TableCell> {id} </TableCell>
-                    <TableCell style={{ width: "15%" }}>
+                    <TableCell style={{ width: "15%", cursor: "pointer" }} onClick={() => navigate(`/site-settings/edit/${id}`)}>
                       <img height={40} src={logo} alt="" />
                     </TableCell>
                     <TableCell style={{ width: "15%", color: "aqua" }}>

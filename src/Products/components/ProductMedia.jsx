@@ -121,7 +121,7 @@ const ProductMedia = (props) => {
                 .map(({ id, img_url, alt_text, created_at, updated_at }) => (
                   <TableRow key={id}>
                     <TableCell> {id} </TableCell>
-                    <TableCell style={{ width: "15%" }}>
+                    <TableCell style={{ width: "15%", cursor: "pointer" }} onClick={() => navigate(`/product-media/edit/${id}`)}>
                       <img height={40} src={img_url} alt="" />
                     </TableCell>
                     <TableCell>{alt_text}</TableCell>

@@ -126,7 +126,7 @@ const FilterBar = (props) => {
                                 }) => is_active ? (
                                     <TableRow key={id}>
                                         <TableCell> {id} </TableCell>
-                                        <TableCell style={{ width: "15%" }}> {first_name} </TableCell>
+                                        <TableCell style={{ width: "15%", cursor: "pointer" }} onClick={() => navigate(`/users/edit/${id}`)}> {first_name} </TableCell>
                                         <TableCell style={{ width: "15%" }}> {phone_number} </TableCell>
                                         <TableCell style={{ width: "15%" }}> {created_at} </TableCell>
                                         <TableCell>

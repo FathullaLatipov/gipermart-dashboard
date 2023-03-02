@@ -145,6 +145,7 @@ const CategoriesList = memo(({ search }) => {
                   <TableRow key={category.id}>
                     <TableCell style={{ width: "30px" }}>{i + 1}</TableCell>
                     <TableCell
+                      style={{cursor: "pointer"}}
                       onClick={() => navigate(`/category/${category.id}`)}
                     >
                       {category.name}

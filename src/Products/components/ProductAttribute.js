@@ -120,7 +120,7 @@ const FilterBar = (props) => {
                                 .map(({ id, name, description }) =>
                                     <TableRow key={id}>
                                         <TableCell> {id} </TableCell>
-                                        <TableCell onClick={() => navigate(`/product-attribute/${id}`)}> {name} </TableCell>
+                                        <TableCell style={{cursor: "pointer"}} onClick={() => navigate(`/product-attribute/edit/${id}`)}> {name} </TableCell>
                                         <TableCell> {description} </TableCell>
                                         <TableCell
                                             style={{

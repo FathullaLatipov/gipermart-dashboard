@@ -147,7 +147,10 @@ const BrandsList = memo(({ search }) => {
             .map((brand, i) => (
               <TableRow key={brand.id}>
                 <TableCell style={{ width: "20px" }}>{i + 1}</TableCell>
-                <TableCell>
+                <TableCell
+                  style={{cursor: "pointer"}}
+                  onClick={() => navigate(`/brands/edit/${brand.id}`)}
+                >
                   <img height={30} src={brand.images} alt="brand_image" />
                 </TableCell>
                 <TableCell>

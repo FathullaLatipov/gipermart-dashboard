@@ -127,7 +127,9 @@ const ProductDetailsPage = (props) => {
                 }) => (
                   <TableRow key={id}>
                     <TableCell> {id} </TableCell>
-                    <TableCell style={{ width: "100%", textAlign: "center" }}>
+                    <TableCell style={{ width: "100%", textAlign: "center", cursor: "pointer" }}
+                      onClick={() => navigate(`/product-attribute-values/edit/${id}`)}
+                    >
                       {attribute_values.attribute_value}
                     </TableCell>
                     <TableCell>{product_inventory.sku} </TableCell>

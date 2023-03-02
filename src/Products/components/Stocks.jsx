@@ -124,7 +124,7 @@ const FilterBar = (props) => {
                                 .map(({ id, images, created_at, updated_at }) =>
                                     <TableRow key={id}>
                                         <TableCell> {id} </TableCell>
-                                        <TableCell >
+                                        <TableCell style={{cursor: "pointer"}} onClick={() => navigate(`/stocks/edit/${id}`)}>
                                             <img height={45} src={images} alt="" />
                                         </TableCell>
                                         <TableCell style={{ width: "акции0%" }} > {new Date(created_at).toLocaleDateString("ru-RU", {

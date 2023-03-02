@@ -126,7 +126,7 @@ const FilterBar = (props) => {
                                 .map(({ id, user, full_name, phone_number, created_at }) =>
                                     <TableRow key={user}>
                                         <TableCell> {user} </TableCell>
-                                        <TableCell>{full_name}</TableCell>
+                                        <TableCell style={{cursor: "pointer"}} onClick={() => navigate(`/checkout/edit/${id}`)}>{full_name}</TableCell>
                                         <TableCell>{phone_number}</TableCell>
                                         <TableCell>
                                             <Checkbox />

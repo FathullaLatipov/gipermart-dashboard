@@ -81,13 +81,13 @@ const FilterBar = (props) => {
           onClick={() => navigate("/product-inventors/add")}
           style={{ width: "100%" }}
         >
-          Создать Инвертарь продуктов
+          Создать инвертарь продуктов
         </Button>
       </PageHeader>
       <Card>
         <div className={classes.headerBorder}>
           <div className={classes.header}>
-            <h3 className={classes.headerTitle}>Все Инверторь продуктов</h3>
+            <h3 className={classes.headerTitle}>Все инверторь продуктов</h3>
           </div>
           <div className={classes.headerSearch}>
             <TextField

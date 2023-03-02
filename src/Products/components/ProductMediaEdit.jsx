@@ -68,7 +68,8 @@ const ProductMediaEdit = (props) => {
                 setNewData((prev) => ({ ...prev, is_feature: e.target.checked }))
               }
             />
-            is_feature <br />
+            Отмечено <br />
+            {/* if_feature  */}
             <Button variant="contained" component="label">
               Загрузите изображения
               <input

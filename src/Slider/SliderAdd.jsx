@@ -33,7 +33,7 @@ const SliderAdd = (props) => {
   return (
     <Container>
       <Backlink onClick={() => navigate("/sliders")}>Слайдеры</Backlink>
-      <PageHeader title="Создать новую Слайдеры" />
+      <PageHeader title="Создать новый слайдер" />
       <div>
         <Card>
           <CardTitle title={"Ссылка на слайдер"} />

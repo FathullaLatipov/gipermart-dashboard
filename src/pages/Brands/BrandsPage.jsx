@@ -18,7 +18,7 @@ const BrandsPage = () => {
             <Container>
                 <PageHeader title={"Бренды"}>
                     <Button variant="primary" color="primary" onClick={() => navigate("/brands/add/")} style={{ width: "100%" }}>
-                        Создать Brand
+                        Создать бренд
                     </Button>
                 </PageHeader>
                 <Card>

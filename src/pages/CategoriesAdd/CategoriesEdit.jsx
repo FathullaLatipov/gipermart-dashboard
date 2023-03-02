@@ -66,12 +66,14 @@ const CategoriesEdit = (props) => {
     return (
         <Container>
             <Backlink onClick={() => sendToPreviousURL()}>Категории</Backlink>
-            <PageHeader title="Создать новую Категории" />
+            <PageHeader title="Создать новую категорию" />
             <div>
                 <Card>
                     <CardTitle title={"Основная информация"} />
                     <div className={classes.mainCardInfo}>
                         <TextField fullWidth placeholder={"Название категории"} name="name" value={data?.name} onChange={(e) => handleChange(e.target)} />
+                        <CardSpacer />
+
                         <TextField fullWidth placeholder={"slug категории"} name="slug" value={data?.slug} onChange={(e) => handleChange(e.target)} />
                         <FormSpacer />
                         <TextField multiline fullWidth placeholder="description категории" name="description" value={data?.description} onChange={(e) => handleChange(e.target)} />
@@ -101,7 +103,8 @@ const CategoriesEdit = (props) => {
                         </Autocomplete>
                     </div>
                 </Card>
-                <Button onClick={handleEdit}>Edit</Button>
+                <CardSpacer />
+                <Button onClick={handleEdit}>Изменить</Button>
             </div>
         </Container>
     );

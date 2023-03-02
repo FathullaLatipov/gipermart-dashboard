@@ -74,7 +74,7 @@ const SliderAdd = (props) => {
       <Backlink onClick={() => navigate("/product-inventors")}>
         Инвертарь
       </Backlink>
-      <PageHeader title="Создать новую Инвертарь" />
+      <PageHeader title="Создать новую инвертарь" />
       <div>
         <Card>
           <CardTitle title={"Основная информация"} />
@@ -104,7 +104,7 @@ const SliderAdd = (props) => {
             <TextField
               type="text"
               fullWidth
-              placeholder={"installment_plan"}
+              placeholder={"Рассрочка"}
               name="installment_plan"
               value={newData?.installment_plan}
               onChange={(e) =>
@@ -118,7 +118,7 @@ const SliderAdd = (props) => {
             <TextField
               type="number"
               fullWidth
-              placeholder={"price"}
+              placeholder={"Цена"}
               name="price"
               value={newData?.price}
               onChange={(e) =>
@@ -129,7 +129,7 @@ const SliderAdd = (props) => {
             <TextField
               type="number"
               fullWidth
-              placeholder={"sale_price"}
+              placeholder={"Скидочная цена"}
               name="sale_price"
               value={newData?.sale_price}
               onChange={(e) =>
@@ -143,7 +143,7 @@ const SliderAdd = (props) => {
                 setNewData((prev) => ({ ...prev, is_active: e.target.checked }))
               }
             />
-            is_active
+            Актив
             <Checkbox
               checked={newData?.is_default ? true : false}
               onChange={(e) =>
@@ -153,7 +153,7 @@ const SliderAdd = (props) => {
                 }))
               }
             />
-            is_default
+            По умолчании
             <Checkbox
               checked={newData?.is_on_sale ? true : false}
               onChange={(e) =>
@@ -163,11 +163,11 @@ const SliderAdd = (props) => {
                 }))
               }
             />
-            is_on_sale
+            В скидке
             <br />
             <Box sx={{ minWidth: 120 }}>
               <FormControl fullWidth>
-                <InputLabel id="product_type">product_type</InputLabel>
+                <InputLabel id="product_type">Тип продукта</InputLabel>
                 <Select
                   labelId="product_type"
                   id="demo-simple-select"
@@ -191,7 +191,7 @@ const SliderAdd = (props) => {
               <CardSpacer />
 
               <FormControl fullWidth>
-                <InputLabel id="product">product</InputLabel>
+                <InputLabel id="product">Продукт</InputLabel>
                 <Select
                   labelId="product"
                   id="demo-simple-select"
@@ -225,6 +225,8 @@ const SliderAdd = (props) => {
       </div>
     </Container>
   );
+  <CardSpacer />
 };
+<CardSpacer />
 
 export default SliderAdd;

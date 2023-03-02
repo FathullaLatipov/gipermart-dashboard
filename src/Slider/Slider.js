@@ -131,7 +131,7 @@ const SliderList = memo(() => {
           // href={href}
           style={{ width: "100%" }}
         >
-          Создать слайдеры
+          Создать слайдер
         </Button>
       </PageHeader>
       <Card>

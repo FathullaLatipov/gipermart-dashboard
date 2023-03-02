@@ -82,7 +82,7 @@ const ProductMedia = (props) => {
           // href={href}
           style={{ width: "100%" }}
         >
-          Создать Медиа
+          Создать медиа
         </Button>
       </PageHeader>
       <Card>

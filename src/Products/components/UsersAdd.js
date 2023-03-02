@@ -53,7 +53,7 @@ const UsersAdd = (props) => {
     return (
         <Container>
             <Backlink onClick={() => sendToPreviousURL()}>Пользователи</Backlink>
-            <PageHeader title="Создать новый пользователь" />
+            <PageHeader title="Создать пользователь" />
             <div>
                 <Card>
                     <CardTitle title={"Основная информация"} />

@@ -26,7 +26,7 @@ const UsersEdit = (props) => {
     const params = useParams();
     const [data, setData] = useState(null);
     const classes = useStyles(props);
- 
+
     const sendToPreviousURL = () => {
         navigate("/users")
     }
@@ -68,10 +68,10 @@ const UsersEdit = (props) => {
                     <div className={classes.mainCardInfo}>
                         <TextField fullWidth placeholder={"Имя пользователя"} name="first_name" value={data?.first_name} onChange={(e) => handleChange(e.target)} />
                         <FormSpacer />
-                        <TextField fullWidth label={"Номер телефона"} name="phone_number" value={data?.phone_number} onChange={(e) => handleChange(e.target)} />
+                        <TextField fullWidth placeholder={"Номер телефона"} name="phone_number" value={data?.phone_number} onChange={(e) => handleChange(e.target)} />
                         <FormSpacer />
-                        <Checkbox checked={data?.is_active ? true : false} onChange={e => setData(prev => ({ ...prev, is_active: e.target.checked }))} />is_active
-                        <Checkbox checked={data?.is_staff ? true : false} onChange={e => setData(prev => ({ ...prev, is_staff: e.target.checked }))} />is_staff
+                        <Checkbox checked={data?.is_active ? true : false} onChange={e => setData(prev => ({ ...prev, is_active: e.target.checked }))} />Актив
+                        <Checkbox checked={data?.is_staff ? true : false} onChange={e => setData(prev => ({ ...prev, is_staff: e.target.checked }))} />Суперюзер
                     </div>
                 </Card>
                 <CardSpacer />

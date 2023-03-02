@@ -60,9 +60,9 @@ const ProductEdit = (props) => {
             <Checkbox checked={newData?.is_active ? true : false}
               onChange={e => setNewData(prev => ({
                 ...prev, is_active: e.target.checked
-              }))} />is_active
-            <Checkbox checked={newData?.USA_product ? true : false} onChange={e => setNewData(prev => ({ ...prev, USA_product: e.target.checked }))} />USA_product
-            <Checkbox checked={newData?.is_recommended ? true : false} onChange={e => setNewData(prev => ({ ...prev, is_recommended: e.target.checked }))} />is_recommended
+              }))} />Актив
+            <Checkbox checked={newData?.USA_product ? true : false} onChange={e => setNewData(prev => ({ ...prev, USA_product: e.target.checked }))} />Продукт из США
+            <Checkbox checked={newData?.is_recommended ? true : false} onChange={e => setNewData(prev => ({ ...prev, is_recommended: e.target.checked }))} />Рекомендация
             <br />
             <Box sx={{ minWidth: 120 }}>
               <FormControl fullWidth>
@@ -84,6 +84,7 @@ const ProductEdit = (props) => {
 
                 </Select>
               </FormControl>
+              <CardSpacer />
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-gh-label">Категория</InputLabel>
                 <Select
@@ -115,6 +116,7 @@ const ProductEdit = (props) => {
       </div>
     </Container>
   );
+  <CardSpacer />
 };
-
+<CardSpacer />
 export default ProductEdit;

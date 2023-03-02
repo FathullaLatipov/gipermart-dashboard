@@ -69,7 +69,7 @@ const CheckoutAdd = (props) => {
       <Backlink onClick={() => navigate("/checkout")}>
         Инвертарь
       </Backlink>
-      <PageHeader title="Создать новую Инвертарь" />
+      <PageHeader title="Создать новую инвертарь" />
       <div>
         <Card>
           <CardTitle title={"Основная информация"} />
@@ -178,7 +178,7 @@ const CheckoutAdd = (props) => {
                 setNewData((prev) => ({ ...prev, is_active: e.target.checked }))
               }
             />
-            is_active
+            Актив
             <Checkbox
               checked={newData?.is_default ? true : false}
               onChange={(e) =>
@@ -188,7 +188,7 @@ const CheckoutAdd = (props) => {
                 }))
               }
             />
-            is_default
+            По умолчании
             <Checkbox
               checked={newData?.is_on_sale ? true : false}
               onChange={(e) =>
@@ -198,7 +198,7 @@ const CheckoutAdd = (props) => {
                 }))
               }
             />
-            is_on_sale
+            В скидке
             <br />
           </div>
         </Card>

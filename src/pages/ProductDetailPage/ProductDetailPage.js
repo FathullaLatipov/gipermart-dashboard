@@ -74,7 +74,7 @@ const ProductDetailsPage = (props) => {
 
   return (
     <Container>
-      <PageHeader title={"Типов атрибут продуктов"}>
+      <PageHeader title={"Атрибут продуктов"}>
         <Button
           variant="primary"
           color="primary"
@@ -82,18 +82,18 @@ const ProductDetailsPage = (props) => {
           // href={href}
           style={{ width: "100%" }}
         >
-          Создать типов атрибут продуктов
+          Создать значения атрибутов
         </Button>
       </PageHeader>
       <Card>
         <div className={classes.headerBorder}>
           <div className={classes.header}>
-            <h3 className={classes.headerTitle}>Все типов атрибут продуктов</h3>
+            <h3 className={classes.headerTitle}>Все значения атрибутов</h3>
           </div>
           <div className={classes.headerSearch}>
             <TextField
               className={classes.headerInput}
-              inputProps={{ placeholder: "Поиск типов атрибут продуктов" }}
+              inputProps={{ placeholder: "Поиск значения атрибутов" }}
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>

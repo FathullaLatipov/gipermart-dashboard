@@ -68,7 +68,7 @@ const SiteAdd = (props) => {
             />
             <CardSpacer />
             <Button style={{ width: "20%" }} component="label">
-              Upload File
+              Загрузите изображения
               <input
                 type="file"
                 onChange={(e) =>

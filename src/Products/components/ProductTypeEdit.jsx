@@ -41,7 +41,7 @@ const ProductTypeAdd = (props) => {
   const classes = useStyles(props);
 
   const handleSubmit = async () => {
-    const res = await $host.put(`dashboard/product-type/${params.id}/`,newData);
+    const res = await $host.put(`dashboard/product-type/${params.id}/`, newData);
     res?.statusText ? navigate("/product-type") : alert("Nimadir hato ketdi");
   };
 
@@ -80,26 +80,26 @@ const ProductTypeAdd = (props) => {
             />
             <CardSpacer />
             <FormControl fullWidth>
-                <InputLabel id="product_type_attribute">product_type</InputLabel>
-                <Select
-                  labelId="product_type_attribute"
-                  id="demo-simple-select"
-                  value={isProductsTypeAttribute}
-                  onChange={(e) => {
-                    setIsProductsTypeAttribute(e.target.value);
-                    setNewData((prev) => ({
-                      ...prev,
-                      product_type_attributes: e.target.value,
-                    }));
-                  }}
-                >
-                  {productsTypeAttribute?.map(({ id, product_attributes }) => (
-                    <MenuItem key={id} value={id}>
-                      {product_attributes.name}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+              <InputLabel id="product_type_attribute">product_type</InputLabel>
+              <Select
+                labelId="product_type_attribute"
+                id="demo-simple-select"
+                value={isProductsTypeAttribute}
+                onChange={(e) => {
+                  setIsProductsTypeAttribute(e.target.value);
+                  setNewData((prev) => ({
+                    ...prev,
+                    product_type_attributes: e.target.value,
+                  }));
+                }}
+              >
+                {productsTypeAttribute?.map(({ id, product_attributes }) => (
+                  <MenuItem key={id} value={id}>
+                    {product_attributes.name}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
             <FormSpacer />
           </div>
         </Card>
@@ -108,7 +108,7 @@ const ProductTypeAdd = (props) => {
           variant="contained"
           onClick={handleSubmit}
         >
-          Save
+          Сохранить
         </Button>
       </div>
     </Container>

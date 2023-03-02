@@ -26,7 +26,7 @@ const SiteEdit = (props) => {
     const params = useParams();
     const [data, setData] = useState(null);
     const classes = useStyles(props);
- 
+
     const sendToPreviousURL = () => {
         navigate("/site-settings")
     }
@@ -70,19 +70,19 @@ const SiteEdit = (props) => {
                         <TextField fullWidth placeholder={"Описание"} name="description" value={data?.description} onChange={(e) => handleChange(e.target)} />
                         <CardSpacer />
                         <Button style={{ width: "20%" }} component="label">
-              Upload File
-              <input
-                type="file"
-                onChange={(e) =>
-                  setData((prev) => ({
-                    ...prev,
-                    logo: e.target.files[0],
-                  }))
-                }
-                multiple
-                hidden
-              />
-            </Button>
+                            Загрузите изображения
+                            <input
+                                type="file"
+                                onChange={(e) =>
+                                    setData((prev) => ({
+                                        ...prev,
+                                        logo: e.target.files[0],
+                                    }))
+                                }
+                                multiple
+                                hidden
+                            />
+                        </Button>
                     </div>
                 </Card>
                 <CardSpacer />

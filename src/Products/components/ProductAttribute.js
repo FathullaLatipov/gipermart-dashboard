@@ -50,7 +50,7 @@ const FilterBar = (props) => {
     const [reload, setReload] = React.useState(1);
     const [data, setData] = React.useState([]);
     const [search, setSearch] = React.useState("");
-    
+
 
     React.useEffect(() => {
         (async () => {
@@ -68,8 +68,8 @@ const FilterBar = (props) => {
             const res = await $host.delete(`dashboard/product-attribute/${id}/`);
             setData(
                 data.filter((post) => {
-                return post.id != id;
-            }));
+                    return post.id != id;
+                }));
         } catch (error) {
             console.error(error);
         }
@@ -83,70 +83,70 @@ const FilterBar = (props) => {
                     variant="primary"
                     color="primary"
                     onClick={() => navigate("/product-attribute/add/")}
-                    style={{height: '70%'}}
-                    // href={href}
-                    >
+                    style={{ height: '70%' }}
+                // href={href}
+                >
                     Создать аттрибут
                 </Button>
             </div>
-            <div style={{margin: '13px', borderRadius: '7px', padding: '23px 0'}}>
-            <div className={classes.headerSearch}>
-                <TextField
-                    className={classes.headerInput}
-                    inputProps={{ placeholder: "Поиск атрибутов" }}
-                    onChange={(e) => setSearch(e.target.value)}
-                />
+            <div style={{ margin: '13px', borderRadius: '7px', padding: '23px 0' }}>
+                <div className={classes.headerSearch}>
+                    <TextField
+                        className={classes.headerInput}
+                        inputProps={{ placeholder: "Поиск атрибутов" }}
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+                </div>
+                <TableContainer className={classes.table}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>ID</TableCell>
+                                <TableCell>Название</TableCell>
+                                <TableCell>Описание</TableCell>
+                                <TableCell style={{ textAlign: "center" }}>Действия</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {data
+                                ?.filter((item) => {
+                                    return search?.toLowerCase() === ""
+                                        ? item
+                                        : item.name?.toLowerCase().includes(search.toLowerCase()) ||
+                                        String(item.id)
+                                            ?.toLowerCase()
+                                            .includes(search.toLowerCase());
+                                })
+                                .map(({ id, name, description }) =>
+                                    <TableRow key={id}>
+                                        <TableCell> {id} </TableCell>
+                                        <TableCell onClick={() => navigate(`/product-attribute/${id}`)}> {name} </TableCell>
+                                        <TableCell> {description} </TableCell>
+                                        <TableCell
+                                            style={{
+                                                display: "flex",
+                                                alignItems: "center",
+                                                gap: "5px",
+                                                justifyContent: "center"
+                                            }}
+                                        >
+                                            <ion-icon
+                                                onClick={() => navigate(`/product-attribute/edit/${id}`)}
+                                                name="create-outline"
+                                            ></ion-icon>
+                                            <ion-icon
+                                                onClick={() => handleRemuve(id)}
+                                                name="trash-outline"
+                                            ></ion-icon>
+                                        </TableCell>
+                                    </TableRow>
+
+                                )}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
             </div>
-            <TableContainer className={classes.table}>
-            <Table sx={{minWidth: 650}} aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>#</TableCell>
-                        <TableCell>Название</TableCell>
-                        <TableCell>Описание</TableCell>
-                        <TableCell style={{ textAlign: "center"}}>Действия</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {data
-                        ?.filter((item) => {
-                            return search?.toLowerCase() === ""
-                                ? item
-                                : item.name?.toLowerCase().includes(search.toLowerCase()) ||
-                                String(item.id)
-                                    ?.toLowerCase()
-                                    .includes(search.toLowerCase());
-                        })
-                        .map(({ id, name, description }) =>
-                                <TableRow key={id}>
-                                    <TableCell> {id} </TableCell>
-                                    <TableCell onClick={() => navigate(`/product-attribute/${id}`)}> {name} </TableCell>
-                                    <TableCell> {description} </TableCell>
-                                    <TableCell
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            gap: "5px",
-                                            justifyContent: "center"
-                                        }}
-                                    >
-                                        <ion-icon
-                                            onClick={() => navigate(`/product-attribute/edit/${id}`) }
-                                            name="create-outline"
-                                        ></ion-icon>
-                                        <ion-icon
-                                            onClick={() => handleRemuve(id)}
-                                            name="trash-outline"
-                                        ></ion-icon>
-                                    </TableCell>
-                                </TableRow>
-                            
-                        )}
-                </TableBody>
-                </Table>
-            </TableContainer>
-            </div>
-            
+
         </div>
     );
 };

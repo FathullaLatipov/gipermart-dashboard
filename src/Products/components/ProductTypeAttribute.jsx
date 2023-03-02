@@ -99,11 +99,11 @@ const ProductTypeAttributes = (props) => {
           <TableContainer className={classes.table}>
             <TableHead>
               <TableRow>
-                <TableCell>#</TableCell>
+                <TableCell>ID</TableCell>
                 <TableCell style={{ width: "100%", textAlign: "center" }}>
-                  product_attribute
+                  Атрибут продукта
                 </TableCell>
-                <TableCell>product_type</TableCell>
+                <TableCell>Тип продукта</TableCell>
                 <TableCell style={{ textAligin: "center" }}>Действия</TableCell>
               </TableRow>
             </TableHead>
@@ -113,14 +113,14 @@ const ProductTypeAttributes = (props) => {
                   return search?.toLowerCase() === ""
                     ? item
                     : item.product_attributes.name
-                        ?.toLowerCase()
-                        .includes(search.toLowerCase()) ||
-                        item.product_types.name
-                          ?.toLowerCase()
-                          .includes(search.toLowerCase()) ||
-                        String(item.id)
-                          ?.toLowerCase()
-                          .includes(search.toLowerCase());
+                      ?.toLowerCase()
+                      .includes(search.toLowerCase()) ||
+                    item.product_types.name
+                      ?.toLowerCase()
+                      .includes(search.toLowerCase()) ||
+                    String(item.id)
+                      ?.toLowerCase()
+                      .includes(search.toLowerCase());
                 })
                 .map(({ id, product_attributes, product_types }) => (
                   <TableRow key={id}>

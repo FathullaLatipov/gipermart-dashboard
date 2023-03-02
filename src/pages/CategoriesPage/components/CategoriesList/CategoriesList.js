@@ -122,7 +122,7 @@ const CategoriesList = memo(({ search }) => {
       <ResponsiveTable className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell style={{ width: "30px" }}>Ид</TableCell>
+            <TableCell style={{ width: "30px" }}>ID</TableCell>
             <TableCell>Tип</TableCell>
             <TableCell>Название</TableCell>
             <TableCell>Oписание</TableCell>
@@ -136,7 +136,7 @@ const CategoriesList = memo(({ search }) => {
               search?.toLowerCase() === ""
                 ? item
                 : item.name?.toLowerCase().includes(search?.toLowerCase()) ||
-                  String(item.id)?.toLowerCase().includes(search.toLowerCase())
+                String(item.id)?.toLowerCase().includes(search.toLowerCase())
             )
             .map(
               (category, i) =>

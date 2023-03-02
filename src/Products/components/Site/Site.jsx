@@ -100,12 +100,12 @@ const Site = (props) => {
           <TableContainer className={classes.table}>
             <TableHead>
               <TableRow>
-                <TableCell style={{ width: "5%" }}>#</TableCell>
-                <TableCell style={{ width: "5%" }}>Logo</TableCell>
+                <TableCell style={{ width: "5%" }}>ID</TableCell>
+                <TableCell style={{ width: "5%" }}>Медиа</TableCell>
                 <TableCell style={{ width: "15%" }}>Ссылка</TableCell>
                 <TableCell style={{ width: "15%" }}>Описание </TableCell>
                 <TableCell style={{ width: "10%", textAlign: "center" }}>
-                  Действие
+                  Действия
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -115,9 +115,9 @@ const Site = (props) => {
                   return search?.toLowerCase() === ""
                     ? item
                     : item.name?.toLowerCase().includes(search.toLowerCase()) ||
-                        String(item.id)
-                          ?.toLowerCase()
-                          .includes(search.toLowerCase());
+                    String(item.id)
+                      ?.toLowerCase()
+                      .includes(search.toLowerCase());
                 })
                 .map(({ id, description, link, logo }) => (
                   <TableRow key={id}>

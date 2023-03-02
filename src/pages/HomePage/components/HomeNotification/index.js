@@ -6,19 +6,19 @@ import TableRowLink from "../../../../components/TableRowLink/TableRowLink";
 
 const useStyles = makeStyles(
     () => ({
-      arrowIcon: {
-        textAlign: "right",
-        width: 100,
-      },
-      tableCard: {
-        overflow: "hidden",
-      },
-      tableRow: {
-        cursor: "pointer",
-      },
-      cardContent: {
-        padding: "0 !important",
-      },
+        arrowIcon: {
+            textAlign: "right",
+            width: 100,
+        },
+        tableCard: {
+            overflow: "hidden",
+        },
+        tableRow: {
+            cursor: "pointer",
+        },
+        cardContent: {
+            padding: "0 !important",
+        },
     }),
     { name: "HomeNotificationTable" },
 );
@@ -53,7 +53,7 @@ const HomeNotification = () => {
                         </TableRowLink>
                         <TableRowLink hover={true} href="/products">
                             <TableCell>
-                                <Typography>                
+                                <Typography>
                                     Товара нет в наличии
                                 </Typography>
                             </TableCell>

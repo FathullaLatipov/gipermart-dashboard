@@ -143,7 +143,7 @@ const CategoriesAdd = (props) => {
           variant="contained"
           onClick={handleSubmit}
         >
-          Save
+          Сохранить
         </Button>
       </div>
     </Container>

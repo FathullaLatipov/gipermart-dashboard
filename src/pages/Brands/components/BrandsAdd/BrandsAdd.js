@@ -41,12 +41,12 @@ const BrandsAdd = (props) => {
   const [isProducts, SetIsProducts] = useState(newData?.product);
   const classes = useStyles(props);
 
-    const handleSubmit = async () => {
-        const formData = new FormData();
-        formData.append("url", newData.url);
-        formData.append("category", newData.category);
-        formData.append("product", newData.product);
-        formData.append("images", newData.images);
+  const handleSubmit = async () => {
+    const formData = new FormData();
+    formData.append("url", newData.url);
+    formData.append("category", newData.category);
+    formData.append("product", newData.product);
+    formData.append("images", newData.images);
 
     const res = await $host.post(`/dashboard/brands/`, formData);
     res?.statusText ? navigate("/brands") : alert("Nimadir hato ketdi");
@@ -130,14 +130,14 @@ const BrandsAdd = (props) => {
                   ))}
                 </Select>
                 <CardSpacer />
-                <Button  style={{width: "20%"}} component="label">
-                    Upload File
-                    <input
-                        type="file"
-                        onChange={(e) => setNewData(prev => ({...prev, images: e.target.files[0]}))}
-                        multiple
-                        hidden
-                    />
+                <Button style={{ width: "20%" }} component="label">
+                  Загрузите изображения
+                  <input
+                    type="file"
+                    onChange={(e) => setNewData(prev => ({ ...prev, images: e.target.files[0] }))}
+                    multiple
+                    hidden
+                  />
                 </Button>
               </FormControl>
             </Box>
@@ -149,7 +149,7 @@ const BrandsAdd = (props) => {
           variant="contained"
           onClick={handleSubmit}
         >
-          Save
+          Сохранить
         </Button>
       </div>
     </Container>

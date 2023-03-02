@@ -115,7 +115,7 @@ const ProductTypeAttributeAdd = (props) => {
           variant="contained"
           onClick={handleSubmit}
         >
-          Save
+          Сохранить
         </Button>
       </div>
     </Container>

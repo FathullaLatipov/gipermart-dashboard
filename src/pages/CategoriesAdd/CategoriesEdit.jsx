@@ -76,7 +76,7 @@ const CategoriesEdit = (props) => {
                         <FormSpacer />
                         <TextField multiline fullWidth placeholder="description категории" name="description" value={data?.description} onChange={(e) => handleChange(e.target)} />
                         <Checkbox defaultChecked={true} checked={data?.is_active} onChange={(e) => setData(prev => ({ ...prev, is_active: e.target.checked }))} />
-                        <Button variant="contained" component="label">Upload File<input type="file" onChange={(e) => setFile(e.target.files[0])} multiple hidden /></Button>
+                        <Button variant="contained" component="label">Загрузите изображения<input type="file" onChange={(e) => setFile(e.target.files[0])} multiple hidden /></Button>
                         <img style={{ borderRadius: "10px", marginTop: "10px", marginLeft: "20px", marginBottom: "-30px" }} width={70} src={data?.background_image} alt="" />
                     </div>
                 </Card>

@@ -104,13 +104,13 @@ const FilterBar = (props) => {
                     <TableContainer className={classes.table}>
                         <TableHead>
                             <TableRow >
-                                <TableCell>#</TableCell>
-                                <TableCell>FIO</TableCell>
-                                <TableCell >Phone</TableCell>
+                                <TableCell>ID</TableCell>
+                                <TableCell>ФИО</TableCell>
+                                <TableCell >Номер</TableCell>
                                 <TableCell style={{ textAligin: "center" }}>Payme</TableCell>
-                                <TableCell style={{ textAligin: "center" }}>Naxt</TableCell>
-                                <TableCell style={{ textAligin: "center", width: "30%" }}>Create_at</TableCell>
-                                <TableCell style={{ textAligin: "center", width:"10%" }}>Destvya</TableCell>
+                                <TableCell style={{ textAligin: "center" }}>Налич</TableCell>
+                                <TableCell style={{ textAligin: "center", width: "30%" }}>Время создания</TableCell>
+                                <TableCell style={{ textAligin: "center", width: "10%" }}>Действия</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -134,11 +134,11 @@ const FilterBar = (props) => {
                                         <TableCell>
                                             <Checkbox />
                                         </TableCell>
-                                            <TableCell style={{width: "30%"}}>{new Date(created_at).toLocaleDateString("ru-RU", {
-                        month: "long",
-                        day: "numeric",
-                        year: "numeric",
-                        })}</TableCell>
+                                        <TableCell style={{ width: "30%" }}>{new Date(created_at).toLocaleDateString("ru-RU", {
+                                            month: "long",
+                                            day: "numeric",
+                                            year: "numeric",
+                                        })}</TableCell>
                                         <TableCell
                                             style={{
                                                 width: "100%",

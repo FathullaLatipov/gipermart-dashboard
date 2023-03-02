@@ -81,7 +81,7 @@ const FilterBar = (props) => {
           onClick={() => navigate("/product-inventors/add")}
           style={{ width: "100%" }}
         >
-          Создать
+          Создать Инвертарь продуктов
         </Button>
       </PageHeader>
       <Card>
@@ -101,13 +101,13 @@ const FilterBar = (props) => {
               <TableRow>
                 <TableCell> sku </TableCell>
                 <TableCell>upc </TableCell>
-                <TableCell>product.name </TableCell>
+                <TableCell>Названия </TableCell>
                 {/* <TableCell>brand.name </TableCell> */}
-                <TableCell>price </TableCell>
-                <TableCell>sale_price </TableCell>
-                <TableCell>created_at </TableCell>
-                <TableCell>updated_at </TableCell>
-                <TableCell>Deystvya</TableCell>
+                <TableCell>Цена </TableCell>
+                <TableCell>Скидочная цена </TableCell>
+                <TableCell>Время создания </TableCell>
+                <TableCell>Время обновления </TableCell>
+                <TableCell>Действия</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -116,11 +116,11 @@ const FilterBar = (props) => {
                   return search?.toLowerCase() === ""
                     ? item
                     : item.product.name
-                        ?.toLowerCase()
-                        .includes(search.toLowerCase()) ||
-                        String(item.id)
-                          ?.toLowerCase()
-                          .includes(search.toLowerCase());
+                      ?.toLowerCase()
+                      .includes(search.toLowerCase()) ||
+                    String(item.id)
+                      ?.toLowerCase()
+                      .includes(search.toLowerCase());
                 })
                 .map(
                   ({

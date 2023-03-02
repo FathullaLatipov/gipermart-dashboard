@@ -57,9 +57,10 @@ const ProductEdit = (props) => {
             <CardSpacer />
             <TextField type="url" multiline fullWidth placeholder={"Описание товара"} name="description" value={newData?.description} onChange={(e) => setNewData(prev => ({ ...prev, description: e.target.value }))} />
             <CardSpacer />
-            <Checkbox checked={newData?.is_active ? true : false} 
-            onChange={e => setNewData(prev => ({ 
-              ...prev, is_active: e.target.checked }))} />is_active
+            <Checkbox checked={newData?.is_active ? true : false}
+              onChange={e => setNewData(prev => ({
+                ...prev, is_active: e.target.checked
+              }))} />is_active
             <Checkbox checked={newData?.USA_product ? true : false} onChange={e => setNewData(prev => ({ ...prev, USA_product: e.target.checked }))} />USA_product
             <Checkbox checked={newData?.is_recommended ? true : false} onChange={e => setNewData(prev => ({ ...prev, is_recommended: e.target.checked }))} />is_recommended
             <br />
@@ -109,7 +110,7 @@ const ProductEdit = (props) => {
           variant="contained"
           onClick={handleSubmit}
         >
-          Save
+          Сохранить
         </Button>
       </div>
     </Container>

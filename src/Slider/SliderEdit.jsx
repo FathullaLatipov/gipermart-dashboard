@@ -62,7 +62,7 @@ const SliderAdd = (props) => {
             />
             <CardSpacer />
             <Button variant="contained" component="label">
-              Upload File
+              Загрузите изображения
               <input
                 type="file"
                 onChange={(e) => setFile(e.target.files[0])}
@@ -90,7 +90,7 @@ const SliderAdd = (props) => {
           variant="contained"
           onClick={handleSubmit}
         >
-          Save
+          Сохранит
         </Button>
       </div>
     </Container>

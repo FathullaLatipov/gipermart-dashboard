@@ -107,8 +107,8 @@ const FilterBar = (props) => {
                             <TableRow>
                                 <TableCell>#</TableCell>
                                 <TableCell>Имя</TableCell>
-                                <TableCell>Создать в</TableCell>
-                                <TableCell>Обновить</TableCell>
+                                <TableCell>Время создания</TableCell>
+                                <TableCell>Время обновления</TableCell>
                                 <TableCell style={{ textAlign: "center" }}>Положение дел</TableCell>
                                 <TableCell style={{ textAligin: "center" }}>Действия</TableCell>
                             </TableRow>

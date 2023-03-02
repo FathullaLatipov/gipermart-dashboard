@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProductAttributesEdit = (props) => {
-    const params = useParams();
+  const params = useParams();
   const navigate = useNavigate();
   const [newData, setNewData] = useState({
     product_attributes: {
@@ -123,7 +123,7 @@ const ProductAttributesEdit = (props) => {
           variant="contained"
           onClick={handleSubmit}
         >
-          Save
+          Сохранить
         </Button>
       </div>
     </Container>

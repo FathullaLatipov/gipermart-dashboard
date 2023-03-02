@@ -100,12 +100,12 @@ const ProductMedia = (props) => {
           <TableContainer className={classes.table}>
             <TableHead>
               <TableRow>
-                <TableCell>#</TableCell>
-                <TableCell>Images</TableCell>
-                <TableCell>Text</TableCell>
-                <TableCell>created_at</TableCell>
-                <TableCell>updated_at</TableCell>
-                <TableCell>Actions</TableCell>
+                <TableCell>ID</TableCell>
+                <TableCell>Медиа</TableCell>
+                <TableCell>Текст</TableCell>
+                <TableCell>Время создания</TableCell>
+                <TableCell>Время обновления</TableCell>
+                <TableCell>Действия</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -114,9 +114,9 @@ const ProductMedia = (props) => {
                   return search?.toLowerCase() === ""
                     ? item
                     : item.name?.toLowerCase().includes(search.toLowerCase()) ||
-                        String(item.id)
-                          ?.toLowerCase()
-                          .includes(search.toLowerCase());
+                    String(item.id)
+                      ?.toLowerCase()
+                      .includes(search.toLowerCase());
                 })
                 .map(({ id, img_url, alt_text, created_at, updated_at }) => (
                   <TableRow key={id}>
@@ -131,11 +131,11 @@ const ProductMedia = (props) => {
                       year: "numeric",
                     })}</TableCell>
                     <TableCell style={{ width: "50%" }}>
-                    {new Date(created_at).toLocaleDateString("ru-RU", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })}{" "}
+                      {new Date(created_at).toLocaleDateString("ru-RU", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      })}{" "}
                     </TableCell>
                     <TableCell
                       style={{

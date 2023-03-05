@@ -54,7 +54,7 @@ const ProductDetailsPageAdd = (props) => {
                     <div className={classes.mainCardInfo}>
                         <Box sx={{ minWidth: 120 }}>
                         <FormControl fullWidth>
-                                <InputLabel id="demo-simple-gh-label">Атрибут продукта</InputLabel>
+                                <InputLabel id="demo-simple-gh-label">Тип продукта</InputLabel>
                                 <Select
                                     labelId="demo-simple-gh-label"
                                     id="demo-simple-select"
@@ -68,14 +68,14 @@ const ProductDetailsPageAdd = (props) => {
                                     }}
                                 >
                                     {
-                                        inventors?.map(({ sku, id }) => (<MenuItem key={id} value={id}>{sku}</MenuItem>))
+                                        inventors?.map(({ products, id }) => (<MenuItem key={id} value={id}>{products.name}</MenuItem>))
                                     }   
 
                                 </Select>
                             </FormControl>
                             <FormSpacer />
                             <FormControl fullWidth>
-                                <InputLabel id="demo-simple-gh-label">Тип продукта</InputLabel>
+                                <InputLabel id="demo-simple-gh-label">Атрибут продукта</InputLabel>
                                 <Select
                                     labelId="demo-simple-gh-label"
                                     id="demo-simple-select"

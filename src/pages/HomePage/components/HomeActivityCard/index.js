@@ -46,32 +46,32 @@ const HomeActivityCard = ({ setOrders }) => {
 
     switch (true) {
       case seconds < 60:
-        unit = "second";
+        unit = "секунд";
         interval = seconds;
         break;
       case seconds < 3600:
-        unit = "minute";
+        unit = "минут";
         interval = Math.floor(seconds / 60);
         break;
       case seconds < 86400:
-        unit = "hour";
+        unit = "часов";
         interval = Math.floor(seconds / 3600);
         break;
       case seconds < 2592000:
-        unit = "day";
+        unit = "дня";
         interval = Math.floor(seconds / 86400);
         break;
       case seconds < 31536000:
-        unit = "month";
+        unit = "месяц";
         interval = Math.floor(seconds / 2592000);
         break;
       default:
-        unit = "year";
+        unit = "год";
         interval = Math.floor(seconds / 31536000);
         break;
     }
 
-    return `${interval} ${unit}${interval === 1 ? "" : "s"} ago`;
+    return `${interval} ${unit}${interval === 1 ? "" : ""} назад`;
   }
 
 

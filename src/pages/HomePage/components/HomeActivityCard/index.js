@@ -1,5 +1,6 @@
 import { Card, CardContent, List, ListItem, ListItemText, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import CardTitle from "../../../../components/CardTitle";
 import $host from "../../../../http";
 const useStyles = makeStyles(
@@ -22,6 +23,8 @@ const useStyles = makeStyles(
 
 
 const HomeActivityCard = ({ setOrders }) => {
+  const params = useParams();
+  const navigate = useNavigate();
   const classes = useStyles();
   const [data, setData] = React.useState([]);
   const [reload, setReload] = React.useState(1);
@@ -93,7 +96,7 @@ const HomeActivityCard = ({ setOrders }) => {
                 <ListItemText
                   key={el.id}
                   primary={
-                    <Typography variant="p">
+                    <Typography variant="p" style={{cursor: "pointer"}} onClick={() => navigate(`checkout`)}>
                       Заказ № {el.id} был размещен
                     </Typography>
                   }

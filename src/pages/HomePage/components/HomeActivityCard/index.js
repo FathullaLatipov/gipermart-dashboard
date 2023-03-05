@@ -100,7 +100,7 @@ const HomeActivityCard = ({ setOrders }) => {
                       Заказ № {el.id} был размещен
                     </Typography>
                   }
-                  secondary={timeSince(new Date(el.created_at))}
+                  secondary={timeSince(new Date(el.created_at))} style={{cursor: "pointer"}} onClick={() => navigate(`checkout`)}
                 />
               ))}
             </ListItem>

@@ -57,6 +57,8 @@ const CategoriesUpdatePage = () => {
     const handleChange = (e) => {
         setMainInputValue(prev => ({...prev, [e.target.name]: e.target.value}));
     }
+
+    
     
     return (
         <Container>

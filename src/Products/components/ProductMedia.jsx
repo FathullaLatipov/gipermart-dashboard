@@ -131,7 +131,7 @@ const ProductMedia = (props) => {
                       year: "numeric",
                     })}</TableCell>
                     <TableCell style={{ width: "50%" }}>
-                      {new Date(created_at).toLocaleDateString("ru-RU", {
+                      {new Date(updated_at).toLocaleDateString("ru-RU", {
                         month: "long",
                         day: "numeric",
                         year: "numeric",
